@@ -16,12 +16,12 @@ import {AlbumEntity} from "./venta/album/album.entity";
       TypeOrmModule.forRoot({
               type: 'mysql',
               host: 'localhost',
-              port:  32781,
+              port:  32771,
               database: 'bddMusica',
               username:'admin',
               password:'12345',
               synchronize: true,
-              dropSchema: true,
+              dropSchema: false,
               entities:[
                   UsuarioEntity,
                   TarjetaCreditoEntity,
