@@ -1,13 +1,21 @@
 import {BadRequestException, Body, Controller, Get, Post, Query, Res, Session} from '@nestjs/common';
 import { AppService } from './app.service';
-import {UsuarioService} from "./venta/usuario/usuario.service";
-import {CreateLoginDto} from "./venta/dto/create-login.dto";
+import {UsuarioService} from "./usuario/usuario.service";
+import {CreateLoginDto} from "./dto/create-login.dto";
 import {validate, ValidationError} from "class-validator";
 
 @Controller()
 export class AppController {
     constructor(private readonly appService: AppService,
                 private readonly _usuarioService:UsuarioService) {}
+
+
+    @Get('home')
+    mostrarHome(
+        @Res() res
+    ){
+        res.render('home')
+    }
 
     @Get('login')
     mostrarLogin(
@@ -58,7 +66,7 @@ export class AppController {
             const autenticacion = await this._usuarioService.autenticar(correo, password)
 
             if (autenticacion) {
-                const idUsuario = autenticacion.id;
+                //const idUsuario = autenticacion.id;
                 //const rolUsuario = await this._rolPorUsuarioServicio.verificarRol(+idUsuario)
 
                 /*if (rolUsuario) {

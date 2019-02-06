@@ -1,17 +1,16 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import {TypeOrmModule} from '@nestjs/typeorm';
-import {UsuarioEntity} from "./venta/usuario/usuario.entity";
-import {TarjetaCreditoEntity} from "./venta/tarjeta-credito/tarjeta-credito.entity";
-import {GeneroEntity} from "./venta/genero/genero.entity";
-import {DiscoEntity} from "./venta/disco/disco.entity";
-import {DetallePedidoEntity} from "./venta/detalle-pedido/detalle-pedido.entity";
-import {CabeceraPedidoEntity} from "./venta/cabecera-pedido/cabecera-pedido.entity";
-import {AutorEntity} from "./venta/autor/autor.entity";
-import {AlbumEntity} from "./venta/album/album.entity";
-import {VentaModule} from "./venta/venta.module";
-import * as http from "http-server";
+import {UsuarioEntity} from "./usuario/usuario.entity";
+import {TarjetaCreditoEntity} from "./tarjeta-credito/tarjeta-credito.entity";
+import {GeneroEntity} from "./genero/genero.entity";
+import {DiscoEntity} from "./disco/disco.entity";
+import {DetallePedidoEntity} from "./detalle-pedido/detalle-pedido.entity";
+import {CabeceraPedidoEntity} from "./cabecera-pedido/cabecera-pedido.entity";
+import {AutorEntity} from "./autor/autor.entity";
+import {AlbumEntity} from "./album/album.entity";
+import {UsuarioModule} from "./usuario/usuario.module";
+import {AppController} from "./app.controller";
 
 
 @Module({
@@ -37,8 +36,7 @@ import * as http from "http-server";
               ]
 
           }
-      ),
-      VentaModule,
+      ),UsuarioModule
   ],
   controllers: [AppController],
   providers: [AppService],

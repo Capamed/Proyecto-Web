@@ -10,23 +10,13 @@
 <p>MENSAJE: <%=mensaje%></p>
 <%}%>
 
-
-
 <form action="crear-usuario"
       method="POST">
     <div>
-        <label for="nombre">Nombre:</label>
-        <input id="nombre"
+        <label for="username">Nickname:</label>
+        <input id="username"
                type="text"
-               name="nombre"
-               value="" required>
-    </div>
-    <br>
-    <div>
-        <label for="correo">Correo:</label>
-        <input id="correo"
-               type="email"
-               name="correo"
+               name="username"
                value="" required>
     </div>
     <br>
@@ -39,12 +29,26 @@
     </div>
     <br>
     <div>
-        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-        <input id="fechaNacimiento"
-               type="date"
-               min="1900-01-01"
-               max="2019-02-08"
-               name="fechaNacimiento"
+        <label for="nombre">Nombre:</label>
+        <input id="nombre"
+               type="text"
+               name="nombre"
+               value="" required>
+    </div>
+    <br>
+    <div>
+        <label for="apellido">Apellido:</label>
+        <input id="apellido"
+               type="text"
+               name="apellido"
+               value="" required>
+    </div>
+    <br>
+    <div>
+        <label for="correo">Correo:</label>
+        <input id="correo"
+               type="email"
+               name="correo"
                value="" required>
     </div>
     <br>

@@ -22,9 +22,6 @@ export class UsuarioEntity {
     @Column()
     correo: string;
 
-    @Column()
-    fotoURL: string;
-
     @OneToMany(
         type => TarjetaCreditoEntity,
         tarjetaCredito => tarjetaCredito.usuario
