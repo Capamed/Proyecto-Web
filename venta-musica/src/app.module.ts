@@ -10,6 +10,9 @@ import {DetallePedidoEntity} from "./venta/detalle-pedido/detalle-pedido.entity"
 import {CabeceraPedidoEntity} from "./venta/cabecera-pedido/cabecera-pedido.entity";
 import {AutorEntity} from "./venta/autor/autor.entity";
 import {AlbumEntity} from "./venta/album/album.entity";
+import {VentaModule} from "./venta/venta.module";
+import * as http from "http-server";
+
 
 @Module({
   imports: [
@@ -35,6 +38,7 @@ import {AlbumEntity} from "./venta/album/album.entity";
 
           }
       ),
+      VentaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
