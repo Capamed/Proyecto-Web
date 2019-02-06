@@ -1,4 +1,5 @@
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import {DiscoEntity} from "../disco/disco.entity";
 
 @Entity('autor')
 
@@ -12,6 +13,10 @@ export class AutorEntity {
     @Column()
     apellidoAutor: string;
 
+    @OneToMany(
+        type =>DiscoEntity,
+        disco=> disco.autor
+    )
 
-
+    discos: DiscoEntity
 }

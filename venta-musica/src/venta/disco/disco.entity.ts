@@ -1,5 +1,8 @@
-import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
 import {DetallePedidoEntity} from "../detalle-pedido/detalle-pedido.entity";
+import {AlbumEntity} from "../album/album.entity";
+import {AutorEntity} from "../autor/autor.entity";
+import {GeneroEntity} from "../genero/genero.entity";
 
 @Entity('disco')
 
@@ -32,6 +35,33 @@ export class DiscoEntity {
     )
 
     detallePedidos: DetallePedidoEntity[];
+
+
+
+    @ManyToOne(
+        type =>AlbumEntity ,
+        album => album.discos
+    )
+
+    album:AlbumEntity
+
+
+    @ManyToOne(
+        type =>AutorEntity,
+        autor => autor.discos
+    )
+
+    autor:AutorEntity
+
+
+
+    @ManyToOne(
+        type =>GeneroEntity ,
+        genero => genero.discos
+    )
+
+    genero:GeneroEntity
+
 
 
 
