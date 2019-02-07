@@ -1,6 +1,6 @@
 import { Controller } from "@nestjs/common";
 
-@Controller()
+@Controller('genero')
 export class GeneroController{
 
 }

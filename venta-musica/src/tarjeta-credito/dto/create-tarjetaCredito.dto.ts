@@ -1,4 +1,4 @@
-import {IsNotEmpty, IsNumber, IsString} from "class-validator";
+import {IsNotEmpty, IsNumber, IsString, Matches} from "class-validator";
 
 export class CreateTarjetaCreditoDto {
 
@@ -11,6 +11,6 @@ export class CreateTarjetaCreditoDto {
     codigoTarjeta: number;
 
     @IsNotEmpty()
-    @IsString()
+    @Matches(/^([a-z ñáéíóú]{2,60})$/i)
     tipoTarjeta: string;
 }

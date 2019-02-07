@@ -10,24 +10,38 @@ export class DiscoEntity {
     @PrimaryGeneratedColumn()
     idDisco: number;
 
-    @Column()
+    @Column({
+        name:"nombreDisco",
+        type:"varchar",
+        length:40
+    })
     nombreDisco: string;
 
-    @Column()
+    @Column({
+        name:"anoDisco",
+        type:"int",
+    })
     anoDisco: number;
 
-    @Column()
+    @Column({
+        name:"descripcionDisco",
+        type:"varchar",
+        length:40
+    })
     descripcionDisco: string;
 
-    @Column()
+    @Column({
+        name:"precioDisco",
+        type:"decimal"
+    })
     precioDisco: number;
 
-    @Column()
+    @Column({
+        name:"idiomaDisco",
+        type:"varchar",
+        length:40
+    })
     idiomaDisco: string;
-
-    @Column()
-    fotoDiscoURL: string;
-
 
     @OneToMany(
         type => DetallePedidoEntity,
@@ -35,8 +49,6 @@ export class DiscoEntity {
     )
 
     detallePedidos: DetallePedidoEntity[];
-
-
 
     @ManyToOne(
         type =>AlbumEntity ,

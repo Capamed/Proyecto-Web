@@ -8,7 +8,10 @@ export class DetallePedidoEntity {
     @PrimaryGeneratedColumn()
     idDetallePedido: number;
 
-    @Column()
+    @Column({
+        name:"cantidad",
+        type:"int"
+    })
     cantidad: number;
 
     @ManyToOne(

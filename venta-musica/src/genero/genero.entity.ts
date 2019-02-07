@@ -8,7 +8,11 @@ export class GeneroEntity {
     @PrimaryGeneratedColumn()
     idGenero: number;
 
-    @Column()
+    @Column({
+        name:"nombreGenero",
+        type:"varchar",
+        length:40
+    })
     nombreGenero: string;
 
 

@@ -9,7 +9,7 @@ import {Usuario} from "./usuario.controller";
 export class UsuarioService {
     constructor(
         @InjectRepository(UsuarioEntity)
-        private readonly _usuarioRepository: Repository<UsuarioEntity>,
+        private readonly _usuarioRepository: Repository<UsuarioEntity>
     ){
 
     }

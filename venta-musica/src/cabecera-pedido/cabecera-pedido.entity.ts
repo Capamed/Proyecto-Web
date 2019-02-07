@@ -9,10 +9,16 @@ export class CabeceraPedidoEntity {
     @PrimaryGeneratedColumn()
     idCabeceraPedido: number;
 
-    @Column()
+    @Column({
+        name:"numeroPedido",
+        type:"int"
+    })
     numeroPedido: number;
 
-    @Column()
+    @Column({
+        name:"ivaPedido",
+        type:"decimal"
+    })
     ivaPedido: number;
 
     @ManyToOne(
