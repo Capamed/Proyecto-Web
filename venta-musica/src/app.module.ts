@@ -19,7 +19,7 @@ import {DiscoModule} from "./disco/disco.module";
       TypeOrmModule.forRoot({
               type: 'mysql',
               host: 'localhost',
-              port:  32771,
+              port:  32783,
               database: 'bddMusica',
               username:'admin',
               password:'12345',

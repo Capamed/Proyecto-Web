@@ -5,19 +5,13 @@ import { FindManyOptions, Like } from "typeorm";
 import { AlbumEntity } from "src/album/album.entity";
 import { GeneroEntity } from "src/genero/genero.entity";
 import { AutorEntity } from "src/autor/autor.entity";
-import { AlbumService } from "src/album/album.service";
-import { GeneroService } from "src/genero/genero.service";
-import { AutorService } from "src/autor/autor.service";
-import { Interface } from "readline";
 
 
 @Controller('disco')
 
 export class DiscoController {
     constructor(private readonly _discoService:DiscoService,
-                private readonly _albumService:AlbumService,
-                private readonly _generoServie:GeneroService,
-                private readonly _autorServie:AutorService){}
+        ){}
 
 
     @Get('disco/:idUsuario')
@@ -68,13 +62,10 @@ export class DiscoController {
         let discos: Disco;
         let album: AlbumEntity[];
         let genero: GeneroEntity[];
-        let Autor: AutorEntity[];
+        let autor: AutorEntity[];
      
         discos = await this._discoService.buscarPorId(+idDisco);
-        album = await this._albumService.obtenerAlbum(+idDisco);
-        genero = await this._albumService.obtenerGenero(+idDisco);
-        autor = await this._albumService.obtenerAutor(+idDisco);
-
+        
         response.render('catalogo',
             {
                 arregloDisco: discos,
@@ -95,6 +86,4 @@ export interface Disco{
     album: AlbumEntity,
     genero: GeneroEntity,
     autor: AutorEntity,
-    
-
 }

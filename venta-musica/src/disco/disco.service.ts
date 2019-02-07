@@ -21,7 +21,8 @@ export class DiscoService {
             where: {
                 idDisco: idDiscoBuscar,
 
-            }
+            },
+            relations:['genero','autor','album']
         };
         return await this._discoRepository.findOne(consulta);
     }
