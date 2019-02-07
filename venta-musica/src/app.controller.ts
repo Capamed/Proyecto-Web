@@ -25,6 +25,7 @@ export class AppController {
 
         let mensaje = undefined;
 
+
         if(error){
             mensaje = "Datos erroneos";
         }
@@ -44,6 +45,7 @@ export class AppController {
     ) {
 
         let mensaje = undefined;
+        let clase = undefined;
 
         const objetoValidacionLogin = new CreateLoginDto();
         objetoValidacionLogin.correo = correo;
@@ -69,30 +71,6 @@ export class AppController {
                 const idUsuario = autenticacion.idUsuario;
 
                 res.redirect('/disco/disco/'+idUsuario);
-
-                //const rolUsuario = await this._rolPorUsuarioServicio.verificarRol(+idUsuario)
-
-                /*if (rolUsuario) {
-                    const nombreRol = rolUsuario.rol.nombreRol
-                    sesion.rol = nombreRol
-                    sesion.correo = correo;
-                    sesion.idUsuario = idUsuario;
-                    // console.log(sesion)
-                    switch (nombreRol) {
-                        case 'usuario':
-                            res.redirect('paciente/paciente')
-                            break;
-                        case 'administrador':
-                            res.redirect('usuario/inicio')
-                            break;
-                        default:
-                            res.send('Aun no se ha asignado una tarea para este rol')
-
-                    }
-                } else {
-                    //res.send('sin rol')
-                    throw new BadRequestException({mensaje: 'Espere estamos verificando sus datos'})
-                }*/
 
             } else {
                 res.redirect('/login')
