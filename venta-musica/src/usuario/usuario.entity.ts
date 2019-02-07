@@ -7,19 +7,39 @@ export class UsuarioEntity {
     @PrimaryGeneratedColumn()
     idUsuario: number;
 
-    @Column()
+    @Column({
+        name:"username",
+        type: "varchar",
+        length: 30,    
+    })
     username: string;
 
-    @Column()
+    @Column({
+            name:"password",
+            type: "varchar",
+            length: 16,    
+    })
     password: string;
 
-    @Column()
+    @Column({
+        name:"nombre",
+        type: "varchar",
+        length: 30,    
+    })
     nombre:string;
 
-    @Column()
+    @Column({
+        name:"apellido",
+        type: "varchar",
+        length: 30,    
+    })
     apellido:string;
 
-    @Column()
+    @Column({
+        name: "correo",
+        type: "varchar",
+        length: 50
+    })
     correo: string;
 
     @OneToMany(

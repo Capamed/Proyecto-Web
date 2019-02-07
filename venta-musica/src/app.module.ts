@@ -18,12 +18,12 @@ import {AppController} from "./app.controller";
       TypeOrmModule.forRoot({
               type: 'mysql',
               host: 'localhost',
-              port:  32771,
+              port:  32783,
               database: 'bddMusica',
               username:'admin',
               password:'12345',
               synchronize: true,
-              dropSchema: false,
+              dropSchema: true,
               entities:[
                   UsuarioEntity,
                   TarjetaCreditoEntity,
