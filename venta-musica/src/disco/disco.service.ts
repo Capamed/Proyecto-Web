@@ -1,7 +1,7 @@
 import {Injectable} from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import {DiscoEntity} from "./disco.entity";
-import {Repository} from "typeorm";
+import {Repository, FindManyOptions} from "typeorm";
 
 @Injectable()
 
@@ -10,7 +10,9 @@ export class DiscoService {
         @InjectRepository(DiscoEntity)
         private readonly _discoRepository:Repository<DiscoEntity>
     ){
-
+    }
+    buscar(parametros?: FindManyOptions<DiscoEntity>): Promise<DiscoEntity[]> {
+        return this._discoRepository.find(parametros)
     }
 
 }

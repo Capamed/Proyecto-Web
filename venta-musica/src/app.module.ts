@@ -23,7 +23,7 @@ import {AppController} from "./app.controller";
               username:'admin',
               password:'12345',
               synchronize: true,
-              dropSchema: false,
+              dropSchema: true,
               entities:[
                   UsuarioEntity,
                   TarjetaCreditoEntity,
