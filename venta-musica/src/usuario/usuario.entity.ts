@@ -42,6 +42,12 @@ export class UsuarioEntity {
     })
     correo: string;
 
+@Column({
+    name:"fotoUsuario",
+    type:"varchar",
+    })
+    fotoUsuario: string;
+
     @OneToMany(
         type => TarjetaCreditoEntity,
         tarjetaCredito => tarjetaCredito.usuario

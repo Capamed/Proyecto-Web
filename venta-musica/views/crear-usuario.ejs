@@ -110,6 +110,18 @@
                    class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Foto Usuario</span>
+            </div>
+            <label for="fotoUsuario"></label>
+            <input id="fotoUsuario"
+                   type="text"
+                   name="fotoUsuario"
+                   value="" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+    
         <br>
         <button type="submit" class="btn btn-info"><%= estaCreando ? 'Crear' : 'Actualizar' %> usuario</button>
 

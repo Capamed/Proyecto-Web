@@ -5,6 +5,7 @@ import { FindManyOptions, Like } from "typeorm";
 import { AlbumEntity } from "src/album/album.entity";
 import { GeneroEntity } from "src/genero/genero.entity";
 import { AutorEntity } from "src/autor/autor.entity";
+import { response } from "express";
 
 
 @Controller('disco')
@@ -60,21 +61,37 @@ export class DiscoController {
         let mensaje = undefined;
 
         let discos: Disco;
-        let album: AlbumEntity[];
-        let genero: GeneroEntity[];
-        let autor: AutorEntity[];
      
         discos = await this._discoService.buscarPorId(+idDisco);
+
         
-        response.render('catalogo',
+        response.render('detalle-disco',
             {
-                arregloDisco: discos,
+                arregloDisco:discos,
                 mensaje: mensaje,
                 idUsuario:idUsuario,
             })
    
 }
+
+
+    @Get('/agregar-al-carrito/:idUsuario/:idDisco')
+    compraDisco(
+        @Res() response,
+        @Param('idUsuario')idUsuario,
+        @Param('idDisco')idDisco,
+    ){
+        response.render('carrito-compra')
+
+    }
+
+
+
+
+
+
 }
+
 
 export interface Disco{
     idDisco:number,

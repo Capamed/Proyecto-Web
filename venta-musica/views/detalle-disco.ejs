@@ -1,0 +1,152 @@
+<% const existeMensaje = typeof mensaje !== "undefined"%>
+
+
+<% if (existeMensaje){%>
+<p>MENSAJE: <%=mensaje%></p>
+<%}%>
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" href="/bootstrap/css/animate.css">
+
+</head>
+<body>
+
+
+<p>
+    <a href="/logout" class="btn btn-info btn-lg" method="POST">
+        <span class="glyphicon glyphicon-log-out"></span> Cerrar sesión
+    </a>
+</p>
+
+<div class="container">
+
+    <h1 align="center"><%=arregloDisco.nombreDisco%></h1>
+
+    <form action="/agregar-al-carrito/<%=idUsuario%>/<%=arregloDisco.idDisco%>" method="POST">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Álbum:</span>
+            </div>
+            <label for="nombreAlbum"></label>
+            <input id="nombreAlbum" type="text" name="nombreAlbum" value="<%=arregloDisco.album.nombreAlbum%>" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <br>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Autor:</span>
+            </div>
+            <label for="nombreAutor"></label>
+            <input id="nombreAutor"
+                   type="text"
+                   name="nombreAutor"
+                   value="<%=arregloDisco.autor.nombreAutor%>" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Género:</span>
+            </div>
+            <label for="nombreGenero"></label>
+            <input id="nombreGenero"
+                   type="text"
+                   name="nombreGenero"
+                   value="<%=arregloDisco.genero.nombreGenero%>" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Idioma:</span>
+            </div>
+            <label for="idiomaDisco"></label>
+            <input id="idiomaDisco"
+                   type="text"
+                   name="idiomaDisco"
+                   value="<%=arregloDisco.idiomaDisco%>" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Año:</span>
+            </div>
+            <label for="anoDisco"></label>
+            <input id="anoDisco"
+                   type="number"
+                   name="anoDisco"
+                   value="<%=arregloDisco.anoDisco%>" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Precio:</span>
+            </div>
+            <label for="precioDisco"></label>
+            <input id="precioDisco"
+                   type="number"
+                   name="precioDisco"
+                   value="<%=arregloDisco.precioDisco%>" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Descripción:</span>
+            </div>
+            <label for="descripcionDisco"></label>
+            <input id="descripcionDisco"
+                   type="text"
+                   name="descripcionDisco"
+                   value="<%=arregloDisco.descripcionDisco%>" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Imagen Disco</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+        <td height="150"><img width="20%" height="100%" src="<%=arregloDisco.fotoDisco %>" alt=""></td>
+     </tr>
+     </tbody>
+     </table>
+  
+    </tbody>
+        <br>
+        <button type="submit" class="btn btn-info">Agregar al Carrito</button>
+
+    </form>
+
+
+    <a href="/home">
+        <button type="button" class="btn btn-info">Regresar</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

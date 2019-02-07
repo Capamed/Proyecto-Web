@@ -43,6 +43,12 @@ export class DiscoEntity {
     })
     idiomaDisco: string;
 
+    @Column({
+        name:"fotoDisco",
+        type:"varchar",
+    })
+    fotoDisco: string;
+
     @OneToMany(
         type => DetallePedidoEntity,
         detallePedido => detallePedido.disco

@@ -78,4 +78,17 @@ export class AppController {
             }
         }
     }
+
+
+    @Get('logout')
+    async logout(
+            @Res() res,
+            @Session() sesion,
+    )
+        {
+
+            sesion.usuario = undefined;
+            sesion.destroy()
+            res.redirect('login')
+        }
 }
