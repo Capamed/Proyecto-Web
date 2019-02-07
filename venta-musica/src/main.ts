@@ -9,6 +9,7 @@ async function bootstrap() {
         express.static('publico')
     );
 
+
   await app.listen(3000);
 
 }
