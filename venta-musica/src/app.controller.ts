@@ -70,7 +70,7 @@ export class AppController {
 
             if (autenticacion) {
                 const idUsuario = autenticacion.idUsuario;
-
+                sesion.bandera = true;
                 res.redirect('/disco/disco/'+idUsuario);
 
             } else {

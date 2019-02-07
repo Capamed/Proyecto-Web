@@ -1,4 +1,4 @@
-import {Controller, Get, Res, Param, Post, Body} from "@nestjs/common";
+import {Controller, Get, Res, Param, Post, Body, Session} from "@nestjs/common";
 import { response } from "express";
 import { UsuarioEntity } from "src/usuario/usuario.entity";
 import { CreateAutorDto } from "src/autor/dto/create-autor.dto";
@@ -29,11 +29,13 @@ export class TarjetaCreditoController {
     async crearMododePago(
         @Res() response,
         @Body()tarjeta:TarjetaCredito,
-        @Param('idUsuario')idUsuario
+        @Param('idUsuario')idUsuario,
+        @Session()sesion,
     ){
     
         let mensaje = undefined;
 
+        if(sesion===true){
         const objetoValidacionTarjeta = new CreateTarjetaCreditoDto();
 
         objetoValidacionTarjeta.numeroTarjeta = tarjeta.numeroTarjeta
@@ -60,6 +62,10 @@ export class TarjetaCreditoController {
             const respuesta = await this._tarjetaService.crearTarjeta(tarjeta)
             response.redirect('/login')
         }
+
+    }else{
+        response.redirect('/login',{mensaje})
+    }
     }
 
 }

@@ -1,0 +1,96 @@
+<% const existeMensaje = typeof mensaje !== "undefined"%>
+
+<% if (existeMensaje){%>
+<p>MENSAJE: <%=mensaje%></p>
+<%}%>
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" href="/bootstrap/css/animate.css">
+
+</head>
+<body>
+
+
+<p>
+    <a href="/logout" class="btn btn-info btn-lg" method="GET">
+        <span class="glyphicon glyphicon-log-out"></span> Cerrar sesión
+    </a>
+</p>
+
+<div class="container">
+
+    <h1>Listas de Canciones</h1>
+
+    <form action="/disco/disco/<%=idUsuario%>" method="get">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label for="busqueda">Búsqueda</label>
+                    <input id="busqueda" type="text" name="busqueda" class="form-control">
+
+                </div>
+
+            </div>
+            <div class="col-sm-3">
+
+                <button
+                        class="btn btn-outline-success btn-block espaciado-busqueda">
+
+                    Buscar
+
+                </button>
+
+            </div>
+        </div>
+    </form>
+
+    <div class="container">
+
+        <div class="scroll-tabla">
+
+
+            <table class="table table-hover">
+                <!-- tr -> table row -->
+                <thead>
+                <tr>
+                    <!-- th -> table header -->
+                    <th>Titulo</th>
+                    <th>Precio</th>
+                    <th>Foto</th>  
+
+                </tr>
+                </thead>
+                <tbody>
+                <!-- tr -> table row -->
+                <% arregloDisco.forEach( (disco)=> { %>
+                    <tr>
+                        <!-- td -> table detail -->
+                        <td><%= disco.nombreDisco %></td>
+                        <td><%= disco.precioDisco %></td>
+                        <td height="150"><img width="20%" height="100%" src="<%=disco.fotoDisco %>" alt=""></td>
+                        <td>
+                            <a href="/disco/detalle-de-disco/<%=idUsuario%>/<%=disco.idDisco%>">
+                                <button class="btn btn-outline-info btn-block">Detalle del Disco</button>
+                            </a>
+                        </td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

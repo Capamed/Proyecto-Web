@@ -1,4 +1,4 @@
-import {Controller, Get, Res, Query, Param} from "@nestjs/common";
+import {Controller, Get, Res, Query, Param, Session} from "@nestjs/common";
 import {DiscoService} from "./disco.service";
 import { DiscoEntity } from "./disco.entity";
 import { FindManyOptions, Like } from "typeorm";
@@ -20,10 +20,13 @@ export class DiscoController {
         @Res() response,
         @Query('busqueda') busqueda: string,
         @Param('idUsuario')idUsuario,
+        @Session() sesion,
        
     ) {
-            let mensaje = undefined;
+        let mensaje = undefined;
 
+        if(sesion.bandera===true){
+            
             let discos: DiscoEntity[];
 
             if (busqueda) {
@@ -49,7 +52,9 @@ export class DiscoController {
                     mensaje: mensaje,
                     idUsuario:idUsuario,
                 })
-       
+            }else{
+                response.redirect('/login')
+            }
     }
 
     @Get('detalle-de-disco/:idUsuario/:idDisco')
@@ -57,8 +62,10 @@ export class DiscoController {
         @Res()response,
         @Param('idDisco')idDisco,
         @Param('idUsuario')idUsuario,
+        @Session()sesion,
     ){
         let mensaje = undefined;
+        if(sesion.bandera===true){
 
         let discos: Disco;
      
@@ -71,7 +78,9 @@ export class DiscoController {
                 mensaje: mensaje,
                 idUsuario:idUsuario,
             })
-   
+        }else{
+            response.redirect('/login')
+        }
 }
 
 
