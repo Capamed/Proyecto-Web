@@ -24,6 +24,7 @@ export class AppController {
     ) {
 
         let mensaje = undefined;
+        let clase = undefined;
 
 
         if(error){
@@ -31,7 +32,8 @@ export class AppController {
         }
 
         res.render('login',{
-            mensaje:mensaje
+            mensaje:mensaje,
+            clase:clase
         })
     }
 
@@ -44,8 +46,7 @@ export class AppController {
 
     ) {
 
-        let mensaje = undefined;
-        let clase = undefined;
+        //let mensaje = undefined;
 
         const objetoValidacionLogin = new CreateLoginDto();
         objetoValidacionLogin.correo = correo;
