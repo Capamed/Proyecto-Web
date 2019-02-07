@@ -27,8 +27,8 @@ export class TarjetaCreditoController {
         @Body()tarjeta:TarjetaCredito,
         @Param('idUsuario')idUsuario
     ){
-        console.log(tarjeta)
-        console.log(idUsuario)
+        console.log('sdsdsds',tarjeta)
+        console.log('asdasda',idUsuario)
         
     }
 

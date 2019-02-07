@@ -66,7 +66,7 @@ export class UsuarioController {
         @Body() datosUsuario
     ) {
 
-        console.log(datosUsuario)
+        //console.log(datosUsuario)
         let mensaje = undefined;
 
         const objetoValidacionUsuario = new CreateUsuarioDto();
