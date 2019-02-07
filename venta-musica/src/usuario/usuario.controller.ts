@@ -3,6 +3,7 @@ import {UsuarioService} from "./usuario.service";
 import {UsuarioEntity} from "./usuario.entity";
 import {CreateUsuarioDto} from "./dto/create-usuario.dto";
 import {validate, ValidationError} from "class-validator";
+import {TarjetaCreditoEntity} from "../tarjeta-credito/tarjeta-credito.entity";
 
 @Controller('usuario')
 
