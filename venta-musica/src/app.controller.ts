@@ -66,7 +66,8 @@ export class AppController {
             const autenticacion = await this._usuarioService.autenticar(correo, password)
 
             if (autenticacion) {
-                //const idUsuario = autenticacion.id;
+                const idUsuario = autenticacion.idUsuario;
+                res.redirect('disco/disco'+idUsuario);
                 //const rolUsuario = await this._rolPorUsuarioServicio.verificarRol(+idUsuario)
 
                 /*if (rolUsuario) {
@@ -92,7 +93,7 @@ export class AppController {
                 }*/
 
             } else {
-                res.redirect('login')
+                res.redirect('/login')
             }
         }
     }

@@ -10,7 +10,7 @@ export class DiscoController {
 
 
     @Get('disco')
-    async paciente(
+    async disco(
         @Res() response,
         @Query('busqueda') busqueda: string,
        
@@ -42,37 +42,8 @@ export class DiscoController {
                 {
                     arregloDisco: discos,
                     mensaje: mensaje,
-
-
                 })
        
     }
 
-//se inicializa la pantalla de crear usuario
-    @Get('crear-Paciente')
-    crearPaciente(
-        @Res() response,
-        @Session() sesion,
-        @Query('error') error: string
-
-    ) {
-
-        if(sesion.rol === 'usuario'){
-            let mensaje = undefined;
-
-            if(error){
-                mensaje = "Datos erroneos";
-            }
-
-
-            response.render(
-                'crear-Paciente',{
-                    mensaje:mensaje
-                }
-            )
-        }else{
-            response.redirect(
-                '/login'
-            )}
-    }
 }
