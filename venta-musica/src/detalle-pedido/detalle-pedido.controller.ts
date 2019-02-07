@@ -1,7 +1,8 @@
 import {Controller} from "@nestjs/common";
 
-@Controller()
+@Controller('detalle-pedido')
 
 export class DetallePedidoController {
+    constructor(private readonly _detallePedidoService:DetallePedidoController){}
 
 }
