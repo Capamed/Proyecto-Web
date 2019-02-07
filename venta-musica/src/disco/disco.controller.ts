@@ -2,7 +2,6 @@ import {Controller, Get, Res, Query, Param} from "@nestjs/common";
 import {DiscoService} from "./disco.service";
 import { DiscoEntity } from "./disco.entity";
 import { FindManyOptions, Like } from "typeorm";
-import {log} from "util";
 
 @Controller('disco')
 

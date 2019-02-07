@@ -66,7 +66,7 @@ export class UsuarioController {
         @Body() datosUsuario
     ) {
 
-        //console.log(datosUsuario)
+        console.log(datosUsuario)
         let mensaje = undefined;
 
         const objetoValidacionUsuario = new CreateUsuarioDto();
@@ -92,8 +92,10 @@ export class UsuarioController {
         } else {
 
             const respuesta = await this._usuarioService.crearUsuario(datosUsuario)
+            console.log(respuesta)
             const obtenerIdUsuario= respuesta.idUsuario;
             res.redirect('/tarjeta-de-credito/modo-de-pago/'+obtenerIdUsuario)
+
         }
     }
 
