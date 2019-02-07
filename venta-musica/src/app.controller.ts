@@ -67,7 +67,7 @@ export class AppController {
 
             if (autenticacion) {
                 const idUsuario = autenticacion.idUsuario;
-                res.redirect('disco/disco'+idUsuario);
+                res.redirect('/disco/disco');
                 //const rolUsuario = await this._rolPorUsuarioServicio.verificarRol(+idUsuario)
 
                 /*if (rolUsuario) {
