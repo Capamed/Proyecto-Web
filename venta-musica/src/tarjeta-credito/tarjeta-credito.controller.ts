@@ -37,7 +37,10 @@ export class TarjetaCreditoController {
         const objetoValidacionTarjeta = new CreateTarjetaCreditoDto();
 
         objetoValidacionTarjeta.numeroTarjeta = tarjeta.numeroTarjeta
+
+        tarjeta.codigoTarjeta = Number(tarjeta.codigoTarjeta)
         objetoValidacionTarjeta.codigoTarjeta = tarjeta.codigoTarjeta
+
         objetoValidacionTarjeta.tipoTarjeta = tarjeta.tipoTarjeta
 
         const errores: ValidationError[] =

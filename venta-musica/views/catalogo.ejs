@@ -1,0 +1,64 @@
+<% const existeMensaje = typeof mensaje !== "undefined"%>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<% if (existeMensaje){%>
+<p>MENSAJE: <%=mensaje%></p>
+<%}%>
+
+<form action="" method="get">
+
+    <label for="busqueda">Buscar</label>
+    <input id="busqueda" type="text" name="busqueda">
+
+    <button>Buscar</button>
+</form>
+
+
+<div class="container">
+    <br>
+
+    <div class="solid">
+
+        <div class="container" align="center">
+            <br>
+            <h1>Discos</h1>
+
+            <div align="right">
+                <img style="height: 50px; width:50px; position: relative; top: -20px"
+                     src="https://tse3.mm.bing.net/th?id=OIP.bbXsNwMXrGKMvEjwoz6j2QHaHa&pid=Api">
+            </div>
+
+        </div>
+
+        <center>
+            <div class="row">
+
+
+                <div class="col-sm">
+                    <a type='button' href="/Parcela/parcela" value='Boton'
+                       style='width:200px; height:200px; color: black'
+                       class="btn-info"><br><br><br>Titulo</a>
+                    <br>
+                    <a type='button' href="/Parcela/parcela" value='Boton'
+                       style='width:200px; height:200px; color: black'
+                       class="btn-info"><br><br><br>precio</a>
+            </div>
+            <br>
+            <br><br>
+        </center>
+
+    </div>
+</div>
+
+<a href="/evento/inicio">
+    <button  class="btn btn-outline-info espaciado-boton" type="submit"> Ver eventos</button>
+
+</a>
+
+</div>
