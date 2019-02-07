@@ -11,6 +11,7 @@ import {AutorEntity} from "./autor/autor.entity";
 import {AlbumEntity} from "./album/album.entity";
 import {UsuarioModule} from "./usuario/usuario.module";
 import {AppController} from "./app.controller";
+import {DiscoModule} from "./disco/disco.module";
 
 
 @Module({
@@ -23,7 +24,7 @@ import {AppController} from "./app.controller";
               username:'admin',
               password:'12345',
               synchronize: true,
-              dropSchema: true,
+              dropSchema: false,
               entities:[
                   UsuarioEntity,
                   TarjetaCreditoEntity,
@@ -36,7 +37,8 @@ import {AppController} from "./app.controller";
               ]
 
           }
-      ),UsuarioModule
+      ),UsuarioModule,
+      DiscoModule
   ],
   controllers: [AppController],
   providers: [AppService],

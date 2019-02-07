@@ -54,41 +54,41 @@
         </div>
     </form>
 
+    <div class="container">
 
-    <div class="scroll-tabla">
+        <div class="scroll-tabla">
 
 
-        <table class="table table-hover">
-            <!-- tr -> table row -->
-            <thead>
-            <tr>
-                <!-- th -> table header -->
-                <th>Titulo</th>
-                <th>Precio</th>
-
-                
-            </tr>
-            </thead>
-            <tbody>
-            <!-- tr -> table row -->
-            <% arregloDisco.forEach( (disco)=> { %>
+            <table class="table table-hover">
+                <!-- tr -> table row -->
+                <thead>
                 <tr>
-                    <!-- td -> table detail -->
-                    <td><%= disco.nombre %></td>
-                    <td><%= disco.precio %></td>
-                    <td>
-                        <a href="/rol-por-usuario/asignar-rol/">
-                            <button
-                                    class="btn btn-outline-info btn-block espaciado-boton">Ver Disco</button>
-                        </a>
-                    </td>
+                    <!-- th -> table header -->
+                    <th>Titulo</th>
+                    <th>Precio</th>
+
+
                 </tr>
-            <% }) %>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <!-- tr -> table row -->
+                <% arregloDisco.forEach( (disco)=> { %>
+                    <tr>
+                        <!-- td -> table detail -->
+                        <td><%= disco.nombreDisco %></td>
+                        <td><%= disco.precioDisco %></td>
+                        <td>
+                            <a href="/rol-por-usuario/asignar-rol/">
+                                <button class="btn btn-outline-info btn-block">Detalle del Disco</button>
+                            </a>
+                        </td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
 
+        </div>
     </div>
-
 
 </div>
 
