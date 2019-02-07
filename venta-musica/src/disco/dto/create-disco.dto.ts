@@ -22,4 +22,6 @@ export class CreateDiscoDto {
     @Matches(/^([a-z ñáéíóú]{2,60})$/i)
     idiomaDisco: string;
 
+    @IsNotEmpty()
+    fotoDisco:string;
 }

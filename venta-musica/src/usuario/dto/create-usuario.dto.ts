@@ -21,4 +21,6 @@ export class CreateUsuarioDto {
     @Matches(/[\w]+@{1}[\w]+\.[a-z]{2,3}/)
     correo:string;
 
+    fotoUsuario:string;
+
 }
