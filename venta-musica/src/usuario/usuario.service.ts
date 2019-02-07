@@ -18,6 +18,7 @@ export class UsuarioService {
         return this._usuarioRepository.save(usuarioEntity);
     }
 
+ 
     async autenticar(correo: string, password: string): Promise<UsuarioEntity> {
 
         const consulta: FindManyOptions<UsuarioEntity> = {

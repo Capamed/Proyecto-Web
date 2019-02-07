@@ -1,0 +1,49 @@
+<% const estaCreando = typeof usuario === "undefined"%>
+
+<% const existeMensaje = typeof mensaje !== "undefined"%>
+
+<h1> <%= estaCreando ? 'Registrar':'' %> Modo de Pago</h1>
+
+<p><%= estaCreando ? 'Registre':'' %> el Modo de Pago</p>
+
+<% if (existeMensaje){%>
+<p>MENSAJE: <%=mensaje%></p>
+<%}%>
+
+<form action="/tarjeta-de-credito/crear-tarjeta-de-credito"
+      method="POST">
+    
+
+<div>
+    <label for="numeroTarjeta">Numero Tarjeta:</label>
+    <input id="numeroTarjeta"
+           type="text"
+           name="numeroTarjeta"
+           value="" required>
+</div>
+<br>
+<div>
+    <label for="codigoTarjeta">Codigo Tarjeta:</label>
+    <input id="codigoTarjeta"
+           type="number"
+           name="codigoTarjeta"
+           value="" required>
+</div>
+<br>
+<div>
+    <label for="tipoTarjeta">Tipo Tarjeta:</label>
+    <input id="tipoTarjeta"
+           type="text"
+           name="tipoTarjeta"
+           value="" required>
+</div>
+    <button><%= estaCreando ? 'Registrar' : '' %> Modo</button>
+
+</form>
+
+
+
+<a href="/usuario/crear-usuario">
+    <button>Regresar</button>
+</a>
+

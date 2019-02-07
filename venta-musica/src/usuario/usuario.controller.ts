@@ -66,6 +66,7 @@ export class UsuarioController {
         @Body() datosUsuario
     ) {
 
+        console.log(datosUsuario)
         let mensaje = undefined;
 
         const objetoValidacionUsuario = new CreateUsuarioDto();
@@ -75,6 +76,7 @@ export class UsuarioController {
         objetoValidacionUsuario.nombre = datosUsuario.nombre
         objetoValidacionUsuario.apellido = datosUsuario.apellido
         objetoValidacionUsuario.correo = datosUsuario.correo
+
 
         const errores: ValidationError[] =
             await validate(objetoValidacionUsuario) // Me devuelve un arreglo de validacion de errores
@@ -90,7 +92,8 @@ export class UsuarioController {
         } else {
 
             const respuesta = await this._usuarioService.crearUsuario(datosUsuario)
-            res.render('login')
+            const obtenerIdUsuario= respuesta.idUsuario;
+            res.redirect('/tarjeta-de-credito/modo-de-pago/'+obtenerIdUsuario)
         }
     }
 

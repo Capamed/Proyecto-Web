@@ -22,7 +22,6 @@ export class TarjetaCreditoEntity {
         type => UsuarioEntity,
         usuario => usuario.tarjetasCredito
     )
-
     usuario: UsuarioEntity;
 
 
