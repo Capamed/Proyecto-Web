@@ -8,7 +8,7 @@ import { Repository } from "typeorm";
 export class GeneroService{
     constructor(
         @InjectRepository(GeneroEntity)
-        private readonly _generoRepository: Repository<GeneroEntity>,
+        private readonly _generoRepository: Repository<GeneroEntity>
     ){
 
     }

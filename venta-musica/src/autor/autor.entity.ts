@@ -7,10 +7,18 @@ export class AutorEntity {
     @PrimaryGeneratedColumn()
     idAutor: number;
 
-    @Column()
+    @Column({
+        name:"nombreAutor",
+        type:"varchar",
+        length:40
+    })
     nombreAutor: string;
 
-    @Column()
+    @Column({
+        name:"apellidoAutor",
+        type:"varchar",
+        length:40
+    })
     apellidoAutor: string;
 
     @OneToMany(

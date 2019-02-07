@@ -9,13 +9,24 @@ export class TarjetaCreditoEntity {
     @PrimaryGeneratedColumn()
     idTarjeta: number;
 
-    @Column()
+    @Column({
+        name: "numeroTarjeta",
+        type: "varchar",
+        length: 30
+    })
     numeroTarjeta: string;
 
-    @Column()
+    @Column({
+        name:"codigoTarjeta",
+        type:"int"
+    })
     codigoTarjeta: number;
 
-    @Column()
+    @Column({
+        name:"tipoTarjeta",
+        type:"varchar",
+        length:40
+    })
     tipoTarjeta: string;
 
     @ManyToOne(
@@ -23,7 +34,6 @@ export class TarjetaCreditoEntity {
         usuario => usuario.tarjetasCredito
     )
     usuario: UsuarioEntity;
-
 
     @OneToMany(
         type => CabeceraPedidoEntity,
