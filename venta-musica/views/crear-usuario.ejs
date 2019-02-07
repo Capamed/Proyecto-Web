@@ -14,35 +14,21 @@
 </head>
 <body>
 
-
-
-
-</body>
-</html>
-
 <% const estaCreando = typeof usuario === "undefined"%>
-
 <% const existeMensaje = typeof mensaje !== "undefined"%>
 
-<h1 align="center"> <%= estaCreando ? 'Registrar':'Actualizar' %> Usuario</h1>
+<% if(existeMensaje){ %>
+    <div class="<%= clase %>" role="alert">
+            <span class="font-weight-bold">
+                MENSAJE
+            </span> : <%= mensaje %>
+    </div>
+<% } %>
 
+
+<h1 align="center"> <%= estaCreando ? 'Registrar':'Actualizar' %> Usuario</h1>
 <p align="center"><%= estaCreando ? 'Registre':'Actualice' %> un Usuario</p>
 
-<% if (existeMensaje){%>
-<p>MENSAJE: <%=mensaje%></p>
-<%}%>
-
-<!doctype html >
-<html lang="es">
-
-<head>
-    <meta charset="utf-8">
-    <title>Crear Usuario</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/estilos-generales.css">
-
-</head>
-<body>
 
 <div class="container">
 
@@ -114,7 +100,7 @@
         <button type="submit" class="btn btn-info"><%= estaCreando ? 'Crear' : 'Actualizar' %> usuario</button>
 
     </form>
-
+    <br>
 
     <a href="/home">
         <button type="button" class="btn btn-info">Regresar</button>
@@ -122,6 +108,18 @@
 
 </div>
 
-</body>
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.js"></script>
 
+
+<script src="/bootstrap/js/bootstrap.js"></script>
+
+</body>
 </html>
+
+
+
+
+
+
+

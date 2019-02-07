@@ -22,6 +22,8 @@ export class UsuarioController {
     ){
 
         let mensaje = undefined;
+        let clase = undefined;
+
         console.log(sesion)
 
         if (accion && nombre) {
@@ -38,6 +40,7 @@ export class UsuarioController {
             {
                 arregloUsuario: usuarios,
                 mensaje: mensaje,
+                clase:clase
 
             })
 
@@ -50,13 +53,16 @@ export class UsuarioController {
     ){
 
         let mensaje = undefined;
+        let clase = undefined;
 
         if(error){
             mensaje = "Datos erroneos";
+            clase = 'alert alert-danger'
         }
 
         res.render('crear-usuario',{
-            mensaje:mensaje
+            mensaje:mensaje,
+            clase:clase
         })
     }
 
@@ -68,6 +74,7 @@ export class UsuarioController {
 
         console.log(datosUsuario)
         let mensaje = undefined;
+        let clase = undefined;
 
         const objetoValidacionUsuario = new CreateUsuarioDto();
 
