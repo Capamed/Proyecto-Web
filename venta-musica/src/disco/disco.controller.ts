@@ -1,4 +1,4 @@
-import {Controller, Get, Res, Query} from "@nestjs/common";
+import {Controller, Get, Res, Query, Param} from "@nestjs/common";
 import {DiscoService} from "./disco.service";
 import { DiscoEntity } from "./disco.entity";
 import { FindManyOptions, Like } from "typeorm";
@@ -9,10 +9,11 @@ export class DiscoController {
     constructor(private readonly _discoService:DiscoService){}
 
 
-    @Get('disco')
+    @Get('disco/:idUsuario')
     async disco(
         @Res() response,
         @Query('busqueda') busqueda: string,
+        @Param('idUsuario')idUsuario,
        
     ) {
             let mensaje = undefined;
@@ -36,14 +37,20 @@ export class DiscoController {
                 discos = await this._discoService.buscar();
             }
 
-
-
             response.render('catalogo',
                 {
                     arregloDisco: discos,
                     mensaje: mensaje,
+                    idUsuario:idUsuario,
                 })
        
+    }
+
+    @Get('detalle-de-disco/:idUsuario')
+    verDisco(
+        @Param('idUsuario')idUsuario,
+    ){
+        console.log(idUsuario)
     }
 
 }
