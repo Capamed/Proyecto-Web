@@ -2,62 +2,105 @@
 
 <% const existeMensaje = typeof mensaje !== "undefined"%>
 
-<h1> <%= estaCreando ? 'Registrar':'Actualizar' %> Usuario</h1>
+<h1 align="center"> <%= estaCreando ? 'Registrar':'Actualizar' %> Usuario</h1>
 
-<p><%= estaCreando ? 'Registre':'Actualice' %> un Usuario</p>
+<p align="center"><%= estaCreando ? 'Registre':'Actualice' %> un Usuario</p>
 
 <% if (existeMensaje){%>
 <p>MENSAJE: <%=mensaje%></p>
 <%}%>
 
-<form action="crear-usuario"
-      method="POST">
-    <div>
-        <label for="username">Nickname:</label>
-        <input id="username"
-               type="text"
-               name="username"
-               value="" required>
-    </div>
-    <br>
-    <div>
-        <label for="password">Password:</label>
-        <input id="password"
-               type="password"
-               name="password"
-               value="" required>
-    </div>
-    <br>
-    <div>
-        <label for="nombre">Nombre:</label>
-        <input id="nombre"
-               type="text"
-               name="nombre"
-               value="" required>
-    </div>
-    <br>
-    <div>
-        <label for="apellido">Apellido:</label>
-        <input id="apellido"
-               type="text"
-               name="apellido"
-               value="" required>
-    </div>
-    <br>
-    <div>
-        <label for="correo">Correo:</label>
-        <input id="correo"
-               type="email"
-               name="correo"
-               value="" required>
-    </div>
-    <br>
-    <button><%= estaCreando ? 'Crear' : 'Actualizar' %> usuario</button>
+<!doctype html >
+<html lang="es">
 
-</form>
+<head>
+    <meta charset="utf-8">
+    <title>Crear Usuario</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/estilos-generales.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <form action="crear-usuario"
+          method="POST">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nickname</span>
+            </div>
+            <label for="username"></label>
+            <input id="username" type="text" name="username" value="" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <br>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+            </div>
+            <label for="password"></label>
+            <input id="password"
+                   type="password"
+                   name="password"
+                   value="" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+            </div>
+            <label for="nombre"></label>
+            <input id="nombre"
+                   type="text"
+                   name="nombre"
+                   value="" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
+            </div>
+            <label for="apellido"></label>
+            <input id="apellido"
+                   type="text"
+                   name="apellido"
+                   value="" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Correo</span>
+            </div>
+            <label for="correo"></label>
+            <input id="correo"
+                   type="email"
+                   name="correo"
+                   value="" required
+                   class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <br>
+        <button type="button" class="btn btn-info"><%= estaCreando ? 'Crear' : 'Actualizar' %> usuario</button>
+
+    </form>
 
 
+    <a href="/home">
+        <button type="button" class="btn btn-info">Regresar</button>
+    </a>
 
-<a href="/home">
-    <button>Regresar</button>
-</a>
+</div>
+
+</body>
+
+</html>
